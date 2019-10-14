@@ -10,7 +10,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('Shougo/defx.nvim')
   call dein#add('w0ng/vim-hybrid')
   call dein#add('cohama/lexima.vim')
-  call dein#add('itchyny/lightline.vim')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
   call dein#add('hashivim/vim-terraform')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('kristijanhusak/defx-icons')
@@ -83,6 +84,10 @@ nnoremap <silent> <C-k> <C-W>k
 nnoremap <silent> <ESC><ESC> :noh<CR>
 nnoremap j gj
 nnoremap k gk
+
+nnoremap <silent>H :bprevious<CR>
+nnoremap <silent>L :bnext<CR>
+nnoremap <silent><C-w> :bd<CR>
 
 nnoremap [denite] <Nop>
 nmap <leader>d [denite]
@@ -188,6 +193,9 @@ let g:ale_linters = {
     \   'c' : ['clang-format'],
     \   'cpp' : ['clang-format']
     \}
+
+" vim-airline/vim-airline
+let g:airline#extensions#tabline#enabled = 1
 
 " startup
 autocmd VimEnter * Defx
