@@ -19,6 +19,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('w0rp/ale')
   call dein#add('sheerun/vim-polyglot')
+  call dein#add('fatih/vim-go')
+  call dein#add('deoplete-plugins/deoplete-go')
   call dein#end()
   call dein#save_state()
 endif
@@ -180,6 +182,9 @@ let g:ale_linters = {
 
 " vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
+
+" fatih/vim-go
+let g:go_fmt_command = "goimports"
 
 " startup
 autocmd VimEnter * Defx
