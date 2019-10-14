@@ -18,6 +18,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('osyo-manga/vim-over')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('w0rp/ale')
+  call dein#add('sheerun/vim-polyglot')
   call dein#end()
   call dein#save_state()
 endif
@@ -53,23 +54,6 @@ set autoindent
 set smartindent
 set backspace=indent,eol,start
 set clipboard=unnamed
-
-autocmd FileType c          setlocal sw=4 sts=4 ts=4 et
-autocmd FileType cpp        setlocal sw=4 sts=4 ts=4 et
-autocmd FileType html       setlocal sw=4 sts=4 ts=4 et
-autocmd FileType css        setlocal sw=4 sts=4 ts=4 et
-autocmd FileType scss       setlocal sw=4 sts=4 ts=4 et
-autocmd FileType sass       setlocal sw=4 sts=4 ts=4 et
-autocmd FileType js         setlocal sw=4 sts=4 ts=4 et
-autocmd FileType javascript setlocal sw=4 sts=4 ts=4 et
-autocmd FileType python     setlocal sw=4 sts=4 ts=4 et
-autocmd FileType json       setlocal sw=4 sts=4 ts=4 et
-autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
-autocmd FileType sh         setlocal sw=4 sts=4 ts=4 et
-autocmd FileType bash       setlocal sw=4 sts=4 ts=4 et
-autocmd FileType zsh        setlocal sw=4 sts=4 ts=4 et
-autocmd FileType vim        setlocal sw=2 sts=2 ts=2 et
-autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
 
 nnoremap <space> <nop>
 xnoremap <space> <nop>
