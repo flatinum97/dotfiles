@@ -46,7 +46,12 @@ set expandtab
 set autoindent
 set smartindent
 set backspace=indent,eol,start
-set clipboard=unnamed
+
+if has('unix')
+  set clipboard^=unnamedplus
+else
+  set clipboard^=unnamed
+endif
 
 nnoremap <space> <nop>
 xnoremap <space> <nop>
