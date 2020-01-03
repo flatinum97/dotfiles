@@ -136,3 +136,8 @@ augroup Vagrant
   au!
   autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 augroup END
+
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile
+endif
