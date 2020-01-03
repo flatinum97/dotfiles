@@ -16,6 +16,7 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
 call plug#end()
 
 filetype plugin indent on
@@ -118,6 +119,17 @@ if executable('vim-language-server')
       autocmd BufWritePre vim LspDocumentFormatSync
   augroup END
 endif
+
+" prabirshrestha/asyncomplete.vim'
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': [],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \    'max_buffer_size': 5000000,
+    \  },
+    \ }))
 
 " Others
 augroup Vagrant
