@@ -96,7 +96,6 @@ if executable('clangd')
           \ 'whitelist': ['c', 'cpp'],
           \ })
       autocmd FileType c,cpp setlocal omnifunc=lsp#complete
-      autocmd BufWritePre c,cpp LspDocumentFormatSync
   augroup END
 endif
 
@@ -109,7 +108,6 @@ if executable('gopls')
           \ 'whitelist': ['go'],
           \ })
       autocmd FileType go setlocal omnifunc=lsp#complete
-      autocmd BufWritePre go LspDocumentFormatSync
   augroup END
 endif
 
@@ -122,9 +120,10 @@ if executable('vim-language-server')
           \ 'whitelist': ['vim'],
           \ })
       autocmd FileType vim setlocal omnifunc=lsp#complete
-      autocmd BufWritePre vim LspDocumentFormatSync
   augroup END
 endif
+
+autocmd BufWritePre * LspDocumentFormatSync
 
 " prabirshrestha/asyncomplete.vim'
 call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
