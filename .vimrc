@@ -4,7 +4,7 @@ scriptencoding utf-8
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'cocopon/iceberg.vim'
+Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'cohama/lexima.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -22,7 +22,7 @@ call plug#end()
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme iceberg
+colorscheme hybrid_material
 
 set hidden
 set number
@@ -84,6 +84,7 @@ autocmd BufWrite * silent! :FixWhitespace
 
 " vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = "hybrid"
 
 " prabirshrestha/vim-lsp
 let g:lsp_signs_enabled = 1
