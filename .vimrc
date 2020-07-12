@@ -16,7 +16,7 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/asyncomplete-buffer.vim'
+Plug 'mattn/vim-lsp-settings'
 call plug#end()
 
 filetype plugin indent on
@@ -94,50 +94,3 @@ let g:airline_theme = "hybrid"
 " prabirshrestha/vim-lsp
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
-
-if executable('clangd')
-  augroup LspC
-      au!
-      autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'clangd',
-          \ 'cmd': {server_info->['clangd']},
-          \ 'whitelist': ['c', 'cpp'],
-          \ })
-      autocmd FileType c,cpp setlocal omnifunc=lsp#complete
-  augroup END
-endif
-
-if executable('gopls')
-  augroup LspGo
-      au!
-      autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'gopls',
-          \ 'cmd': {server_info->['gopls']},
-          \ 'whitelist': ['go'],
-          \ })
-      autocmd FileType go setlocal omnifunc=lsp#complete
-  augroup END
-endif
-
-if executable('vim-language-server')
-  augroup LspVimScript
-      au!
-      autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'vim-language-server',
-          \ 'cmd': {server_info->['vim-language-server']},
-          \ 'whitelist': ['vim'],
-          \ })
-      autocmd FileType vim setlocal omnifunc=lsp#complete
-  augroup END
-endif
-
-" prabirshrestha/asyncomplete.vim'
-call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-    \ 'name': 'buffer',
-    \ 'whitelist': ['*'],
-    \ 'blacklist': [],
-    \ 'completor': function('asyncomplete#sources#buffer#completor'),
-    \ 'config': {
-    \    'max_buffer_size': 5000000,
-    \  },
-    \ }))
