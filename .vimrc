@@ -17,6 +17,8 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'mattn/vim-lsp-settings'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 filetype plugin indent on
@@ -116,3 +118,8 @@ autocmd BufWritePre <buffer> LspDocumentFormatSync
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 0
 let g:asyncomplete_popup_delay = 200
+
+" SirVer/ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
