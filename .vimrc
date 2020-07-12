@@ -112,7 +112,7 @@ let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_text_edit_enabled = 1
 
-autocmd BufWritePre <buffer> LspDocumentFormatSync
+autocmd BufWritePre <buffer> silent! :LspDocumentFormatSync
 
 " prabirshrestha/asyncomplete.vim
 let g:asyncomplete_auto_popup = 1
