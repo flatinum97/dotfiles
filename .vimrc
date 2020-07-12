@@ -53,6 +53,11 @@ else
   set clipboard^=unnamed
 endif
 
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile
+endif
+
 nnoremap <space> <nop>
 xnoremap <space> <nop>
 let mapleader = "\<space>"
@@ -126,8 +131,6 @@ if executable('vim-language-server')
   augroup END
 endif
 
-autocmd BufWritePre * LspDocumentFormatSync
-
 " prabirshrestha/asyncomplete.vim'
 call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
     \ 'name': 'buffer',
@@ -138,14 +141,3 @@ call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options
     \    'max_buffer_size': 5000000,
     \  },
     \ }))
-
-" Others
-augroup Vagrant
-  au!
-  autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
-augroup END
-
-if has('persistent_undo')
-  set undodir=~/.vim/undo
-  set undofile
-endif
