@@ -70,7 +70,7 @@ augroup ftindent
   autocmd! FileType python setlocal shiftwidth=2 softtabstop=2 expandtab
   autocmd! FileType go     setlocal shiftwidth=4 softtabstop=4 expandtab
   autocmd! FileType c      setlocal shiftwidth=4 softtabstop=4 expandtab
-  autocmd! FileType cpp    setlocal shiftwidth=4 softtabstop=4 expandtab
+  autocmd! FileType cpp    setlocal shiftwidth=2 softtabstop=2 expandtab
   autocmd! FileType html   setlocal shiftwidth=2 softtabstop=2 expandtab
 augroup END
 
