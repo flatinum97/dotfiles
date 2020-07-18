@@ -1,2 +1,4 @@
 .cache
 /.vim/
+/.config/atcoder-cli-nodejs/session.json
+/.config/atcoder-cli-nodejs/config.json
