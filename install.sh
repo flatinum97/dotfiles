@@ -3,9 +3,6 @@
 set -u
 
 DOTPATH=$(cd $(dirname $0) && pwd)
-DEINPATH="$DOTPATH"/.cache/dein/repos/github.com/Shougo/dein.vim
-
-ln -nsfv "$DOTPATH/.config/nvim" "$HOME/.config/nvim"
 
 # Creating symbolic links
 for dotfile in .??*; do
@@ -16,6 +13,7 @@ for dotfile in .??*; do
   ln -nsfv "$DOTPATH"/"$dotfile" "$HOME"/"$dotfile"
 done
 
-
-# Installing dein.vim
-[ ! -d "$DEINPATH" ] && git clone https://github.com/Shougo/dein.vim.git "$DEINPATH"
+# .config
+for dotfile in `ls -1 .config`; do
+  ln -nsfv "$DOTPATH"/.config/"$dotfile" "$HOME"/.config/"$dotfile"
+done
