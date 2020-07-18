@@ -11,6 +11,8 @@
   delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 [core]
   editor = vim -c \"set fenc=utf-8\"
+[rebase]
+  autosquash = true
 [ghq]
   root = ~/ghq/src
   vcs = git
