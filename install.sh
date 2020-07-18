@@ -17,3 +17,5 @@ done
 for dotfile in `ls -1 .config`; do
   ln -nsfv "$DOTPATH"/.config/"$dotfile" "$HOME"/.config/"$dotfile"
 done
+
+echo "[ -f ~/.me.bash ] && source ~/.me.bash" >> ~/.bashrc
